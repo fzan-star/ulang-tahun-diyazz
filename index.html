@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ulang Tahun Diyazz 🌸</title>
+    <link href="https://fonts.googleapis.com/css2?family=Pangolin&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="quizBox" class="card gemas-card">
+        <div class="bear bear-left">
+            <div class="ear-l"></div>
+            <div class="ear-r"></div>
+            <div class="bear-head">
+                <div class="eye-l"></div>
+                <div class="eye-r"></div>
+                <div class="nose"></div>
+                <div class="mouth"></div>
+            </div>
+        </div>
+
+        <div class="icon-header">🤔</div>
+        <h2>Eitss, Jawab Dulu!</h2>
+        <p id="riddleText">apa yang paling kamu suka? 🤔</p>
+        
+        <input type="text" id="answerInput" placeholder="Ketik jawabannya di sini..." autocomplete="off">
+        <button id="checkBtn">Cek Jawaban!</button>
+        
+        <p id="hintText" class="hint">Petunjuk: yang kamu selalu pikirin(kayaknya, 6 Huruf)</p>
+        <p id="failMessage" class="fail-text"></p>
+    </div>
+
+    <div id="wishBox" class="card gemas-card hidden">
+        <div class="bear bear-right-up">
+            <div class="ear-l"></div>
+            <div class="ear-r"></div>
+            <div class="bear-head">
+                <div class="eye-l"></div>
+                <div class="eye-r"></div>
+                <div class="nose"></div>
+                <div class="mouth"></div>
+            </div>
+        </div>
+
+        <div class="star top-left">✨</div>
+        <div class="star top-right">🌸</div>
+        
+        <div class="content">
+            <h1 class="title">YEAY BENAR! 🎉</h1>
+            <p class="greeting">Happy Birthday my 彼女 😉( <span class="kaomoji">ฅ•ω•ฅ</span> )</p>
+            <p class="wish">Sesuai jawaban tadi, makasih ya udah muterin pikiran aku terus. Semoga harimu semanis senyummu! 🍦</p>
+            <p class="signature">- Dari u 彼氏💖 -</p>
+            <button onclick="createGemasRain()">Hujankan Kebahagiaan! ✨</button>
+        </div>
+        
+        <div class="star bottom-left">🐱</div>
+        <div class="star bottom-right">🌟</div>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
