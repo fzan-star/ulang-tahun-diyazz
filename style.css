@@ -1,0 +1,158 @@
+/* Dasar Halaman */
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff0f3; /* Pink Pastel Ultra Muda */
+    background-image: radial-gradient(#ffffff 10%, transparent 10%);
+    background-size: 20px 20px;
+    font-family: 'Pangolin', cursive;
+    overflow: hidden;
+}
+
+/* Kartu Utama */
+.gemas-card {
+    background: white;
+    padding: 30px;
+    border-radius: 30px;
+    box-shadow: 0 10px 25px rgba(255, 182, 193, 0.5);
+    text-align: center;
+    width: 320px;
+    border: 5px solid #ffccd5;
+    position: relative; /* Penting untuk posisi boneka */
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    z-index: 10;
+}
+
+/* ===========================
+   CSS ART: BONEKA BERUANG LUCU
+   =========================== */
+.bear {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    z-index: -1; /* Di belakang teks kartu */
+    animation: bearSway 4s ease-in-out infinite; /* Biar goyang gemas */
+}
+
+/* Warna Beruang (Coklat Pastel) */
+.bear-head, .ear-l, .ear-r {
+    background-color: #ffccaa; /* Coklat muda pastel */
+    border: 2px solid #e0b090;
+}
+
+/* Kepala Beruang */
+.bear-head {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 50% 50% 45% 45%; /* Chubby bawah */
+}
+
+/* Telinga */
+.ear-l, .ear-r {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    top: -5px;
+}
+.ear-l { left: -5px; }
+.ear-r { right: -5px; }
+
+/* Detail Wajah */
+.eye-l, .eye-r {
+    position: absolute;
+    width: 6px;
+    height: 8px;
+    background: #333;
+    border-radius: 50%;
+    top: 20px;
+}
+.eye-l { left: 15px; }
+.eye-r { right: 15px; }
+
+.nose {
+    position: absolute;
+    width: 10px;
+    height: 8px;
+    background: #ff85a1; /* Hidung pink */
+    border-radius: 50% 50% 40% 40%;
+    top: 30px;
+    left: calc(50% - 5px);
+}
+
+.mouth {
+    position: absolute;
+    width: 16px;
+    height: 8px;
+    border-bottom: 2px solid #e0b090;
+    border-radius: 0 0 10px 10px;
+    top: 38px;
+    left: calc(50% - 8px);
+}
+
+/* Posisi Boneka di Kartu */
+.bear-left {
+    bottom: -20px;
+    left: -30px;
+    transform: rotate(-15deg);
+}
+
+.bear-right-up {
+    top: -30px;
+    right: -20px;
+    transform: rotate(20deg);
+}
+
+/* Animasi Goyang Gemas */
+@keyframes bearSway {
+    0%, 100% { transform: rotate(-10deg) translateY(0); }
+    50% { transform: rotate(10deg) translateY(-8px); }
+}
+
+/* ===========================
+   CSS Dasar Lainnya (Sama)
+   =========================== */
+.hidden { display: none !important; }
+.icon-header { font-size: 50px; margin-bottom: 10px; }
+h2 { color: #ff85a1; }
+input { width: 80%; padding: 12px; border-radius: 15px; border: 2px solid #ffccd5; margin: 15px 0; font-family: 'Pangolin', cursive; text-align: center; outline: none; }
+button { background: linear-gradient(45deg, #ff85a1, #ffacc5); color: white; border: none; padding: 12px 25px; border-radius: 20px; cursor: pointer; font-family: 'Pangolin', cursive; font-size: 1.1em; box-shadow: 0 4px 0 #ff5c8d; transition: all 0.2s; }
+button:active { transform: translateY(4px); box-shadow: none; }
+.hint { font-size: 0.85em; color: #aaa; margin-top: 10px; }
+.fail-text { color: #ff4d4d; font-size: 0.9em; font-weight: bold; margin-top: 10px; height: 20px; }
+.title { color: #ff85a1; font-size: 2.2em; margin-bottom: 10px; }
+.greeting { color: #444; font-weight: bold; }
+.kaomoji { color: #ff85a1; font-size: 1.2em; }
+.wish { color: #666; font-size: 0.95em; line-height: 1.5; }
+.signature { color: #ff85a1; font-weight: bold; margin-top: 15px; }
+.star { position: absolute; font-size: 20px; }
+.top-left { top: 15px; left: 15px; } .top-right { top: 15px; right: 15px; }
+.bottom-left { bottom: 15px; left: 15px; } .bottom-right { bottom: 15px; right: 15px; }
+
+/* Animasi Shake (Kalau Salah) */
+@keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-10px); }
+    50% { transform: translateX(10px); }
+    75% { transform: translateX(-10px); }
+    100% { transform: translateX(0); }
+}
+
+/* Animasi Hati/Bintang Terbang */
+.flying-gemas {
+    position: absolute;
+    font-size: 30px;
+    animation: floatUpGemas 4s ease-in forwards;
+    pointer-events: none;
+    z-index: 99;
+}
+
+@keyframes floatUpGemas {
+    0% { transform: translateY(0) scale(0) rotate(0deg); opacity: 0; }
+    10% { opacity: 1; transform: translateY(-50px) scale(1.2) rotate(10deg); }
+    100% { transform: translateY(-110vh) translateX(50px) rotate(360deg); opacity: 0; }
+}
